@@ -21,27 +21,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->spinBox_ReverseResultDegrees->setRange(0,360);
     ui->spinBox_ReverseResultMinutes->setRange(0,60);
     ui->spinBox_ReverseResultSeconds->setRange(0,60);
-
-
-    // Валидаторы
-    //
-//    ui->lineEdit_DirectCoordinates_X->setValidator(new QDoubleValidator);
-//    ui->lineEdit_DirectCoordinates_Y->setValidator(new QDoubleValidator);
-//    ui->lineEdit_DirectValue_L->setValidator(new QDoubleValidator);
-//    ui->lineEdit_ReverseResultValue_L->setValidator(new QDoubleValidator);
-//    ui->lineEdit_ReverseCoordinates_X_1->setValidator(new QDoubleValidator);
-//    ui->lineEdit_ReverseCoordinates_X_2->setValidator(new QDoubleValidator);
-//    ui->lineEdit_ReverseCoordinates_Y_1->setValidator(new QDoubleValidator);
-//    ui->lineEdit_ReverseCoordinates_Y_2->setValidator(new QDoubleValidator);
-
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
 
 
    // Pushbuttons //
@@ -175,10 +160,6 @@ void MainWindow::on_pushButton_ReverseCalculate_clicked() // кнопка РАС
     double intpart3;
     double fractpart3 = modf(seconds, &intpart3); //intpart3 - seconds
 
-//    QString mystring;
-//    mystring += QString::number(intpart1) + ".";      // folded angle into one line (just to watch result)
-//    mystring += QString::number(intpart2) + ".";
-//    mystring += QString::number(intpart3);
 
     if (deltaX > 0 and deltaY > 0)
     { // r = alpha

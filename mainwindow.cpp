@@ -21,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->spinBox_ReverseResultDegrees->setRange(0,360);
     ui->spinBox_ReverseResultMinutes->setRange(0,60);
     ui->spinBox_ReverseResultSeconds->setRange(0,60);
+
+    setValidator();
 }
 
 MainWindow::~MainWindow()
@@ -297,72 +299,28 @@ void MainWindow::on_pushButton_ReverseResultOK_clicked() // кнпока ОК в
     // LineEdits //
 
 //DirectTask
-void MainWindow::on_lineEdit_DirectCoordinates_X_textChanged(const QString &arg1)
-{
-    QRegExp regExp("(-?\\d{0,1000}(\\.\\d{0,2})?)|(\\d{0,1000})");
-    QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_DirectCoordinates_X);
-    ui->lineEdit_DirectCoordinates_X->setValidator(validator);
-}
 
-void MainWindow::on_lineEdit_DirectCoordinates_Y_textChanged(const QString &arg1)
+void MainWindow::setValidator()
 {
-    QRegExp regExp("(-?\\d{0,1000}(\\.\\d{0,2})?)|(\\d{0,1000})");
-    QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_DirectCoordinates_Y);
-    ui->lineEdit_DirectCoordinates_Y->setValidator(validator);
-}
+    QRegExp regExpMinus("(-?\\d{0,1000}(\\.\\d{0,2})?)|(\\d{0,1000})");
+    QValidator *validatorMinus = new QRegExpValidator(regExpMinus, this);
+    ui->lineEdit_DirectCoordinates_X->setValidator(validatorMinus);
+    ui->lineEdit_DirectCoordinates_Y->setValidator(validatorMinus);
+    ui->lineEdit_ReverseCoordinates_X_1->setValidator(validatorMinus);
+    ui->lineEdit_ReverseCoordinates_Y_1->setValidator(validatorMinus);
+    ui->lineEdit_ReverseCoordinates_X_2->setValidator(validatorMinus);
+    ui->lineEdit_ReverseCoordinates_Y_2->setValidator(validatorMinus);
 
-void MainWindow::on_lineEdit_DirectValue_L_textChanged(const QString &arg1)
-{
+
     QRegExp regExp("\\d{0,1000}(\\.\\d{0,2})?");
     QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_DirectValue_L);
     ui->lineEdit_DirectValue_L->setValidator(validator);
-}
-
-void MainWindow::on_lineEdit_DirectResultCoordinates_X_textChanged(const QString &arg1)
-{
-
-}
-
-void MainWindow::on_lineEdit_DirectResultCoordinates_Y_textChanged(const QString &arg1)
-{
-
-}
-
-//ReverseTask
-void MainWindow::on_lineEdit_ReverseCoordinates_X_1_textChanged(const QString &arg1)
-{
-    QRegExp regExp("(-?\\d{0,1000}(\\.\\d{0,2})?)|(\\d{0,1000})");
-    QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_ReverseCoordinates_X_1);
-    ui->lineEdit_ReverseCoordinates_X_1->setValidator(validator);
-}
-
-void MainWindow::on_lineEdit_ReverseCoordinates_Y_1_textChanged(const QString &arg1)
-{
-    QRegExp regExp("(-?\\d{0,1000}(\\.\\d{0,2})?)|(\\d{0,1000})");
-    QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_ReverseCoordinates_Y_1);
-    ui->lineEdit_ReverseCoordinates_Y_1->setValidator(validator);
-}
-
-void MainWindow::on_lineEdit_ReverseCoordinates_X_2_textChanged(const QString &arg1)
-{
-    QRegExp regExp("(-?\\d{0,1000}(\\.\\d{0,2})?)|(\\d{0,1000})");
-    QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_ReverseCoordinates_X_2);
-    ui->lineEdit_ReverseCoordinates_X_2->setValidator(validator);
-}
-
-void MainWindow::on_lineEdit_ReverseCoordinates_Y_2_textChanged(const QString &arg1)
-{
-    QRegExp regExp("(-?\\d{0,1000}(\\.\\d{0,2})?)|(\\d{0,1000})");
-    QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_ReverseCoordinates_Y_2);
-    ui->lineEdit_ReverseCoordinates_Y_2->setValidator(validator);
-}
-
-void MainWindow::on_lineEdit_ReverseResultValue_L_textChanged(const QString &arg1)
-{
-    QRegExp regExp("\\d{0,1000}(\\.\\d{0,2})?");
-    QValidator *validator = new QRegExpValidator(regExp, ui->lineEdit_ReverseResultValue_L);
     ui->lineEdit_ReverseResultValue_L->setValidator(validator);
+
+
 }
+
+
 
     // SpinBoxes //
 
@@ -404,20 +362,3 @@ void MainWindow::on_spinBox_DirectSeconds_valueChanged(int arg1)
     }
 }
 
-//ReverseTask
-void MainWindow::on_spinBox_ReverseResultDegrees_valueChanged(int arg1)
-{
-
-}
-
-void MainWindow::on_spinBox_ReverseResultMinutes_valueChanged(int arg1)
-{
-
-}
-
-void MainWindow::on_spinBox_ReverseResultSeconds_valueChanged(int arg1)
-{
-
-}
-
-    // functions //

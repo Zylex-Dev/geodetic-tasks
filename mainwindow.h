@@ -52,25 +52,7 @@ private slots:
 
 // строчки (лайн эдиты)
 
-    void on_lineEdit_DirectCoordinates_X_textChanged(const QString &arg1);
 
-    void on_lineEdit_DirectCoordinates_Y_textChanged(const QString &arg1);
-
-    void on_lineEdit_DirectValue_L_textChanged(const QString &arg1);
-
-    void on_lineEdit_DirectResultCoordinates_X_textChanged(const QString &arg1);
-
-    void on_lineEdit_DirectResultCoordinates_Y_textChanged(const QString &arg1);
-
-    void on_lineEdit_ReverseCoordinates_X_1_textChanged(const QString &arg1);
-
-    void on_lineEdit_ReverseCoordinates_Y_1_textChanged(const QString &arg1);
-
-    void on_lineEdit_ReverseCoordinates_X_2_textChanged(const QString &arg1);
-
-    void on_lineEdit_ReverseCoordinates_Y_2_textChanged(const QString &arg1);
-
-    void on_lineEdit_ReverseResultValue_L_textChanged(const QString &arg1);
 
 // спин боксы
 
@@ -80,11 +62,7 @@ private slots:
 
     void on_spinBox_DirectSeconds_valueChanged(int arg1);
 
-    void on_spinBox_ReverseResultDegrees_valueChanged(int arg1);
-
-    void on_spinBox_ReverseResultMinutes_valueChanged(int arg1);
-
-    void on_spinBox_ReverseResultSeconds_valueChanged(int arg1);
+    void setValidator();
 
 private:
     Ui::MainWindow *ui;

@@ -74,13 +74,15 @@ void MainWindow::on_pushButton_DirectCalculate_clicked() // кнопка РЕШ�
     double Ya = ui->lineEdit_DirectCoordinates_Y->text().toDouble();
     double L = ui->lineEdit_DirectValue_L->text().toDouble();
 
-    int degrees = ui->spinBox_DirectDegrees->text().toInt();
-    int minutes = ui->spinBox_DirectMinutes->text().toInt();
-    int seconds = ui->spinBox_DirectSeconds->text().toInt();
+    double degrees = ui->spinBox_DirectDegrees->value();
+    double minutes = ui->spinBox_DirectMinutes->value();
+    double seconds = ui->spinBox_DirectSeconds->value();
 
 
 
     double radians = (degrees + (minutes + seconds/60) /60) * M_PI / 180; // converting degreeses from spinbox to radians
+
+    //ui->lineEdit_DirectResultCoordinates_X->setText(QString::number(radians,'f',5));
 
 
     double deltaX = L * cos(radians); // calculating deltaX
@@ -88,9 +90,9 @@ void MainWindow::on_pushButton_DirectCalculate_clicked() // кнопка РЕШ�
     double deltaY = L * sin(radians); // calcuating deltaY
 
     double Xb = Xa + deltaX;
-    Xb = round(Xb * 100) / 100;
+
     double Yb = Ya + deltaY;
-    Yb = round(Yb * 100) / 100;
+
 
     ui->lineEdit_DirectResultCoordinates_X->setText(QString::number(Xb,'f',2));
     ui->lineEdit_DirectResultCoordinates_Y->setText(QString::number(Yb,'f',2));

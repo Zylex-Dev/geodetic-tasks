@@ -67,31 +67,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-//    void DirectTask(int Xa, int Ya, int L, int degrees, int minutes, int seconds,  Xb, int Yb)
-//    {
-//        double radians = (degrees + (minutes + seconds/60) /60) * M_PI / 180; // converting degreeses from spinbox to radians
-//        //L = round((L * 100) / 100); // rounding to 2points after comma
-//        //Xa = round((Xa * 100) / 100); // rounding to 2points after comma
-//        //Ya = round((Ya * 100) / 100); // rounding to 2points after comma
-
-
-//        double deltaX = L * cos(radians); // calculating deltaX
-//        deltaX = round(deltaX * 100) / 100; // rounding to 2points after comma
-//        double deltaY = L * sin(radians); // calcuating deltaY
-//        deltaY = round(deltaY * 100) / 100; // rounding to 2points after comma
-
-//        Xb = Xa + deltaX;
-//        Xb = round(Xb * 100) / 100;
-//        Yb = Ya + deltaY;
-//        Yb = round(Yb * 100) / 100;
-
-//    }
-
-    void ReverseTask(int Xa, int Ya, int Xb, int Yb)
-    {
-
-    }
-
 };
 
 

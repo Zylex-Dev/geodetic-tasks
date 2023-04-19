@@ -17,10 +17,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->spinBox_DirectDegrees->setRange(0,360);
     ui->spinBox_DirectMinutes->setRange(0,60);
     ui->spinBox_DirectSeconds->setRange(0,60);
+    ui->spinBox_DirecTiltDegrees->setRange(-90,90);
+    ui->spinBox_DirectTiltMinutes->setRange(0,360);
+    ui->spinBox_DirectTiltSeconds->setRange(0,360);
     //reverse
     ui->spinBox_ReverseResultDegrees->setRange(0,360);
     ui->spinBox_ReverseResultMinutes->setRange(0,60);
     ui->spinBox_ReverseResultSeconds->setRange(0,60);
+
 
     setValidator();
 }
@@ -44,6 +48,10 @@ void MainWindow::on_pushButton_DirectTask_clicked() // кнопка выбора
     ui->spinBox_DirectDegrees->clear();
     ui->spinBox_DirectMinutes->clear();
     ui->spinBox_DirectSeconds->clear();
+    ui->lineEdit_DirectHeightA->clear();
+    ui->spinBox_DirecTiltDegrees->clear();
+    ui->spinBox_DirectTiltMinutes->clear();
+    ui->spinBox_DirectTiltSeconds->clear();
 }
 
 void MainWindow::on_pushButton_ReverseTask_clicked() // кнопка выбора решения обратной геодезической задачи В ГЛАВНОМ МЕНЮ
@@ -55,6 +63,7 @@ void MainWindow::on_pushButton_ReverseTask_clicked() // кнопка выбор�
     ui->lineEdit_ReverseCoordinates_X_2->clear();
     ui->lineEdit_ReverseCoordinates_Y_1->clear();
     ui->lineEdit_ReverseCoordinates_Y_2->clear();
+
 }
 
 //DirectTask
@@ -69,6 +78,7 @@ void MainWindow::on_pushButton_DirectCalculate_clicked() // кнопка РЕШ�
 
     ui->lineEdit_DirectResultCoordinates_X->setReadOnly(true);
     ui->lineEdit_DirectResultCoordinates_Y->setReadOnly(true);
+    ui->lineEdit_DirectResultHeightB->setReadOnly(true);
 
     double Xa = ui->lineEdit_DirectCoordinates_X->text().toDouble();
     double Ya = ui->lineEdit_DirectCoordinates_Y->text().toDouble();
@@ -78,9 +88,15 @@ void MainWindow::on_pushButton_DirectCalculate_clicked() // кнопка РЕШ�
     double minutes = ui->spinBox_DirectMinutes->value();
     double seconds = ui->spinBox_DirectSeconds->value();
 
+    double Ha = ui->lineEdit_DirectHeightA->text().toDouble();
+    double TiltDegrees = ui->spinBox_DirecTiltDegrees->value();
+    double TiltMinutes = ui->spinBox_DirectTiltMinutes->value();
+    double TiltSeconds = ui->spinBox_DirectTiltSeconds->value();
 
 
     double radians = (degrees + (minutes + seconds/60) /60) * M_PI / 180; // converting degreeses from spinbox to radians
+
+    double TiltRadians = (TiltDegrees + (TiltMinutes + TiltSeconds/60) /60) * M_PI / 180; // converting degreeses from spinbox to radians
 
     //ui->lineEdit_DirectResultCoordinates_X->setText(QString::number(radians,'f',5));
 
@@ -93,9 +109,14 @@ void MainWindow::on_pushButton_DirectCalculate_clicked() // кнопка РЕШ�
 
     double Yb = Ya + deltaY;
 
+    double Hb = L * sin(TiltRadians);
 
     ui->lineEdit_DirectResultCoordinates_X->setText(QString::number(Xb,'f',2));
     ui->lineEdit_DirectResultCoordinates_Y->setText(QString::number(Yb,'f',2));
+    ui->lineEdit_DirectResultHeightB->setText((QString::number(Hb,'f', 2)));
+
+
+
 
 
 
@@ -111,12 +132,15 @@ void MainWindow::on_pushButton_DirectResultOK_clicked() // кнопка ОК в 
     ui->stackedWidget->setCurrentIndex(0);
 
     ui->lineEdit_DirectValue_L->clear();
-
     ui->lineEdit_DirectCoordinates_X->clear();
     ui->lineEdit_DirectCoordinates_Y->clear();
     ui->spinBox_DirectDegrees->clear();
     ui->spinBox_DirectMinutes->clear();
     ui->spinBox_DirectSeconds->clear();
+    ui->lineEdit_DirectHeightA->clear();
+    ui->spinBox_DirecTiltDegrees->clear();
+    ui->spinBox_DirectTiltMinutes->clear();
+    ui->spinBox_DirectTiltSeconds->clear();
 }
 
 
@@ -137,6 +161,12 @@ void MainWindow::on_pushButton_ReverseCalculate_clicked() // кнопка РАС
     ui->spinBox_ReverseResultDegrees->setButtonSymbols(QAbstractSpinBox::NoButtons);
     ui->spinBox_ReverseResultMinutes->setButtonSymbols(QAbstractSpinBox::NoButtons);
     ui->spinBox_ReverseResultSeconds->setButtonSymbols(QAbstractSpinBox::NoButtons);
+    ui->spinBox_ReverseResultTiltDegrees->setReadOnly(true);
+    ui->spinBox_ReverseResultTiltMinutes->setReadOnly(true);
+    ui->spinBox_ReverseResultTiltSeconds->setReadOnly(true);
+    ui->spinBox_ReverseResultTiltDegrees->setButtonSymbols(QAbstractSpinBox::NoButtons);
+    ui->spinBox_ReverseResultTiltMinutes->setButtonSymbols(QAbstractSpinBox::NoButtons);
+    ui->spinBox_ReverseResultTiltSeconds->setButtonSymbols(QAbstractSpinBox::NoButtons);
 
 
     double Xa = ui->lineEdit_ReverseCoordinates_X_1->text().toDouble();
@@ -276,6 +306,8 @@ void MainWindow::on_pushButton_ReverseCalculate_clicked() // кнопка РАС
 
 
 
+
+
     //ui->lineEdit_ReverseResultValue_L->setText(QString::number(,'f',25)
 }
 
@@ -312,6 +344,8 @@ void MainWindow::setValidator()
     ui->lineEdit_ReverseCoordinates_Y_1->setValidator(validatorMinus);
     ui->lineEdit_ReverseCoordinates_X_2->setValidator(validatorMinus);
     ui->lineEdit_ReverseCoordinates_Y_2->setValidator(validatorMinus);
+    ui->lineEdit_DirectHeightA->setValidator(validatorMinus);
+
 
 
     QRegExp regExp("\\d{0,1000}(\\.\\d{0,2})?");

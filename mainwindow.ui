@@ -480,6 +480,11 @@
           <height>151</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Прямая геодезическая задача</string>
         </property>
@@ -493,6 +498,11 @@
           <height>151</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Обратная геодезическая задача</string>
         </property>
@@ -500,11 +510,16 @@
        <widget class="QLabel" name="label_Menu">
         <property name="geometry">
          <rect>
-          <x>540</x>
+          <x>500</x>
           <y>100</y>
-          <width>861</width>
+          <width>951</width>
           <height>81</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Выберите какую задачу вы хотите решить:</string>
@@ -606,9 +621,9 @@
        <widget class="QLabel" name="label_DirectHorizontalPosition">
         <property name="geometry">
          <rect>
-          <x>590</x>
-          <y>280</y>
-          <width>651</width>
+          <x>420</x>
+          <y>290</y>
+          <width>481</width>
           <height>81</height>
          </rect>
         </property>
@@ -619,7 +634,7 @@
        <widget class="QLabel" name="label_Direct_L">
         <property name="geometry">
          <rect>
-          <x>740</x>
+          <x>450</x>
           <y>370</y>
           <width>31</width>
           <height>61</height>
@@ -632,7 +647,7 @@
        <widget class="QLabel" name="label_Direct_m_3">
         <property name="geometry">
          <rect>
-          <x>1110</x>
+          <x>810</x>
           <y>380</y>
           <width>51</width>
           <height>51</height>
@@ -645,7 +660,7 @@
        <widget class="QLineEdit" name="lineEdit_DirectValue_L">
         <property name="geometry">
          <rect>
-          <x>780</x>
+          <x>480</x>
           <y>380</y>
           <width>321</width>
           <height>41</height>
@@ -658,8 +673,8 @@
        <widget class="QLabel" name="label_DirectAngle">
         <property name="geometry">
          <rect>
-          <x>590</x>
-          <y>490</y>
+          <x>410</x>
+          <y>470</y>
           <width>421</width>
           <height>61</height>
          </rect>
@@ -668,11 +683,11 @@
          <string>Дирекционный угол:</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_DirectAlpha">
+       <widget class="QLabel" name="label_DirectAlpha_1">
         <property name="geometry">
          <rect>
-          <x>650</x>
-          <y>560</y>
+          <x>350</x>
+          <y>540</y>
           <width>41</width>
           <height>61</height>
          </rect>
@@ -684,8 +699,8 @@
        <widget class="QSpinBox" name="spinBox_DirectMinutes">
         <property name="geometry">
          <rect>
-          <x>920</x>
-          <y>560</y>
+          <x>550</x>
+          <y>540</y>
           <width>111</width>
           <height>61</height>
          </rect>
@@ -694,8 +709,8 @@
        <widget class="QSpinBox" name="spinBox_DirectSeconds">
         <property name="geometry">
          <rect>
-          <x>1120</x>
-          <y>560</y>
+          <x>710</x>
+          <y>540</y>
           <width>111</width>
           <height>61</height>
          </rect>
@@ -704,8 +719,8 @@
        <widget class="QSpinBox" name="spinBox_DirectDegrees">
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>560</y>
+          <x>400</x>
+          <y>540</y>
           <width>111</width>
           <height>61</height>
          </rect>
@@ -714,8 +729,8 @@
        <widget class="QLabel" name="label_DirectDegrees">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>560</y>
+          <x>520</x>
+          <y>540</y>
           <width>21</width>
           <height>31</height>
          </rect>
@@ -727,8 +742,8 @@
        <widget class="QLabel" name="label_DirectMinutes">
         <property name="geometry">
          <rect>
-          <x>1030</x>
-          <y>550</y>
+          <x>660</x>
+          <y>540</y>
           <width>31</width>
           <height>51</height>
          </rect>
@@ -740,8 +755,8 @@
        <widget class="QLabel" name="label_DirectSeconds">
         <property name="geometry">
          <rect>
-          <x>1240</x>
-          <y>550</y>
+          <x>830</x>
+          <y>540</y>
           <width>31</width>
           <height>51</height>
          </rect>
@@ -825,6 +840,153 @@
          <string>Назад</string>
         </property>
        </widget>
+       <widget class="QLabel" name="label_DirectTiltAngle">
+        <property name="geometry">
+         <rect>
+          <x>1180</x>
+          <y>470</y>
+          <width>271</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Угол наклона:</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_DirecTiltDegrees">
+        <property name="geometry">
+         <rect>
+          <x>1070</x>
+          <y>540</y>
+          <width>111</width>
+          <height>61</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_DirectTiltMinutes">
+        <property name="geometry">
+         <rect>
+          <x>1250</x>
+          <y>540</y>
+          <width>111</width>
+          <height>61</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_DirectTiltSeconds">
+        <property name="geometry">
+         <rect>
+          <x>1430</x>
+          <y>540</y>
+          <width>111</width>
+          <height>61</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectAlpha_2">
+        <property name="geometry">
+         <rect>
+          <x>1020</x>
+          <y>540</y>
+          <width>41</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>α:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectDegrees_2">
+        <property name="geometry">
+         <rect>
+          <x>1190</x>
+          <y>540</y>
+          <width>21</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>°</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectMinutes_2">
+        <property name="geometry">
+         <rect>
+          <x>1360</x>
+          <y>530</y>
+          <width>31</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string> '</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectSeconds_2">
+        <property name="geometry">
+         <rect>
+          <x>1550</x>
+          <y>530</y>
+          <width>31</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&quot;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectHeightA">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>310</y>
+          <width>251</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Высота точки A:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_DirectHeightA">
+        <property name="geometry">
+         <rect>
+          <x>1100</x>
+          <y>380</y>
+          <width>321</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.00</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_Direct_m_4">
+        <property name="geometry">
+         <rect>
+          <x>1430</x>
+          <y>380</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>м</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectH">
+        <property name="geometry">
+         <rect>
+          <x>1060</x>
+          <y>380</y>
+          <width>31</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>H</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="DirectResult">
        <widget class="QLabel" name="label_DirectResult">
@@ -848,9 +1010,9 @@
        <widget class="QLabel" name="label_DirectResultCoordinates_B">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>230</y>
-          <width>631</width>
+          <x>450</x>
+          <y>220</y>
+          <width>491</width>
           <height>61</height>
          </rect>
         </property>
@@ -866,8 +1028,8 @@
        <widget class="QLabel" name="label_DirectResultCoordinates_X">
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>370</y>
+          <x>490</x>
+          <y>320</y>
           <width>51</width>
           <height>91</height>
          </rect>
@@ -884,8 +1046,8 @@
        <widget class="QLabel" name="label_DirectResultCoordinates_Y">
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>550</y>
+          <x>490</x>
+          <y>450</y>
           <width>51</width>
           <height>81</height>
          </rect>
@@ -902,15 +1064,15 @@
        <widget class="QLineEdit" name="lineEdit_DirectResultCoordinates_X">
         <property name="geometry">
          <rect>
-          <x>810</x>
-          <y>380</y>
+          <x>560</x>
+          <y>330</y>
           <width>331</width>
           <height>81</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>30</pointsize>
+          <pointsize>35</pointsize>
          </font>
         </property>
         <property name="text">
@@ -920,15 +1082,15 @@
        <widget class="QLineEdit" name="lineEdit_DirectResultCoordinates_Y">
         <property name="geometry">
          <rect>
-          <x>810</x>
-          <y>550</y>
+          <x>560</x>
+          <y>450</y>
           <width>331</width>
           <height>81</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>30</pointsize>
+          <pointsize>35</pointsize>
          </font>
         </property>
         <property name="text">
@@ -1020,15 +1182,105 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
+       <widget class="QLabel" name="label_DirectResultHeightB">
+        <property name="geometry">
+         <rect>
+          <x>1130</x>
+          <y>200</y>
+          <width>361</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Высота точки B:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_DirectResultHeightB">
+        <property name="geometry">
+         <rect>
+          <x>1130</x>
+          <y>330</y>
+          <width>331</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0.00</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectRedult_m_1">
+        <property name="geometry">
+         <rect>
+          <x>920</x>
+          <y>350</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>м</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectResult_m_2">
+        <property name="geometry">
+         <rect>
+          <x>920</x>
+          <y>480</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>м</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_DirectResult_m_3">
+        <property name="geometry">
+         <rect>
+          <x>1480</x>
+          <y>360</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>м</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="Reverse">
        <widget class="QLabel" name="label_ReverseCoordinates_A">
         <property name="geometry">
          <rect>
-          <x>600</x>
-          <y>20</y>
-          <width>811</width>
-          <height>141</height>
+          <x>630</x>
+          <y>0</y>
+          <width>621</width>
+          <height>81</height>
          </rect>
         </property>
         <property name="text">
@@ -1038,10 +1290,10 @@
        <widget class="QLabel" name="label_ReverseCoordinates_B">
         <property name="geometry">
          <rect>
-          <x>600</x>
-          <y>380</y>
-          <width>811</width>
-          <height>141</height>
+          <x>630</x>
+          <y>400</y>
+          <width>621</width>
+          <height>61</height>
          </rect>
         </property>
         <property name="text">
@@ -1052,7 +1304,7 @@
         <property name="geometry">
          <rect>
           <x>630</x>
-          <y>140</y>
+          <y>60</y>
           <width>51</width>
           <height>91</height>
          </rect>
@@ -1065,7 +1317,7 @@
         <property name="geometry">
          <rect>
           <x>630</x>
-          <y>250</y>
+          <y>160</y>
           <width>51</width>
           <height>91</height>
          </rect>
@@ -1078,7 +1330,7 @@
         <property name="geometry">
          <rect>
           <x>630</x>
-          <y>480</y>
+          <y>460</y>
           <width>51</width>
           <height>91</height>
          </rect>
@@ -1091,7 +1343,7 @@
         <property name="geometry">
          <rect>
           <x>630</x>
-          <y>570</y>
+          <y>550</y>
           <width>51</width>
           <height>91</height>
          </rect>
@@ -1103,8 +1355,8 @@
        <widget class="QLineEdit" name="lineEdit_ReverseCoordinates_X_1">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>160</y>
+          <x>680</x>
+          <y>80</y>
           <width>511</width>
           <height>51</height>
          </rect>
@@ -1116,8 +1368,8 @@
        <widget class="QLineEdit" name="lineEdit_ReverseCoordinates_Y_1">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>270</y>
+          <x>680</x>
+          <y>180</y>
           <width>511</width>
           <height>51</height>
          </rect>
@@ -1129,8 +1381,8 @@
        <widget class="QLineEdit" name="lineEdit_ReverseCoordinates_X_2">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>500</y>
+          <x>680</x>
+          <y>480</y>
           <width>511</width>
           <height>51</height>
          </rect>
@@ -1142,8 +1394,8 @@
        <widget class="QLineEdit" name="lineEdit_ReverseCoordinates_Y_2">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>590</y>
+          <x>680</x>
+          <y>570</y>
           <width>511</width>
           <height>51</height>
          </rect>
@@ -1155,8 +1407,8 @@
        <widget class="QLabel" name="label_m_1">
         <property name="geometry">
          <rect>
-          <x>1210</x>
-          <y>170</y>
+          <x>1200</x>
+          <y>90</y>
           <width>41</width>
           <height>41</height>
          </rect>
@@ -1168,8 +1420,8 @@
        <widget class="QLabel" name="label_m_2">
         <property name="geometry">
          <rect>
-          <x>1210</x>
-          <y>280</y>
+          <x>1200</x>
+          <y>190</y>
           <width>41</width>
           <height>41</height>
          </rect>
@@ -1178,11 +1430,11 @@
          <string>м</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_m_3">
+       <widget class="QLabel" name="label_m_7">
         <property name="geometry">
          <rect>
-          <x>1210</x>
-          <y>510</y>
+          <x>1200</x>
+          <y>490</y>
           <width>41</width>
           <height>41</height>
          </rect>
@@ -1194,8 +1446,8 @@
        <widget class="QLabel" name="label_m_4">
         <property name="geometry">
          <rect>
-          <x>1210</x>
-          <y>600</y>
+          <x>1200</x>
+          <y>580</y>
           <width>41</width>
           <height>41</height>
          </rect>
@@ -1254,6 +1506,84 @@
         </property>
         <property name="text">
          <string>Назад</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ReverseHa">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>270</y>
+          <width>41</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>H</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_ReverseHeightA">
+        <property name="geometry">
+         <rect>
+          <x>680</x>
+          <y>280</y>
+          <width>511</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.00</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_m_5">
+        <property name="geometry">
+         <rect>
+          <x>1200</x>
+          <y>290</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>м</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ReverseHb">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>640</y>
+          <width>41</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>H</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_ReverseHeightB">
+        <property name="geometry">
+         <rect>
+          <x>680</x>
+          <y>650</y>
+          <width>511</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0.00</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_m_6">
+        <property name="geometry">
+         <rect>
+          <x>1200</x>
+          <y>660</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>м</string>
         </property>
        </widget>
       </widget>
@@ -1351,10 +1681,10 @@
        <widget class="QLabel" name="label_ReverseresultAngle">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>290</x>
           <y>420</y>
-          <width>581</width>
-          <height>121</height>
+          <width>471</width>
+          <height>111</height>
          </rect>
         </property>
         <property name="font">
@@ -1369,8 +1699,8 @@
        <widget class="QLabel" name="label_ReverseResultAlpha">
         <property name="geometry">
          <rect>
-          <x>490</x>
-          <y>570</y>
+          <x>270</x>
+          <y>550</y>
           <width>51</width>
           <height>61</height>
          </rect>
@@ -1387,8 +1717,8 @@
        <widget class="QSpinBox" name="spinBox_ReverseResultDegrees">
         <property name="geometry">
          <rect>
-          <x>590</x>
-          <y>580</y>
+          <x>330</x>
+          <y>550</y>
           <width>151</width>
           <height>61</height>
          </rect>
@@ -1402,8 +1732,8 @@
        <widget class="QLabel" name="label_ReverseResultDegrees">
         <property name="geometry">
          <rect>
-          <x>750</x>
-          <y>570</y>
+          <x>490</x>
+          <y>540</y>
           <width>31</width>
           <height>41</height>
          </rect>
@@ -1420,8 +1750,8 @@
        <widget class="QLabel" name="label_ReverseResultMinutes">
         <property name="geometry">
          <rect>
-          <x>1060</x>
-          <y>570</y>
+          <x>710</x>
+          <y>540</y>
           <width>41</width>
           <height>51</height>
          </rect>
@@ -1438,8 +1768,8 @@
        <widget class="QLabel" name="label_ReverseResultSeconds">
         <property name="geometry">
          <rect>
-          <x>1380</x>
-          <y>570</y>
+          <x>930</x>
+          <y>540</y>
           <width>31</width>
           <height>51</height>
          </rect>
@@ -1456,8 +1786,8 @@
        <widget class="QSpinBox" name="spinBox_ReverseResultMinutes">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>580</y>
+          <x>550</x>
+          <y>550</y>
           <width>151</width>
           <height>61</height>
          </rect>
@@ -1471,8 +1801,8 @@
        <widget class="QSpinBox" name="spinBox_ReverseResultSeconds">
         <property name="geometry">
          <rect>
-          <x>1220</x>
-          <y>580</y>
+          <x>770</x>
+          <y>550</y>
           <width>151</width>
           <height>61</height>
          </rect>
@@ -1569,6 +1899,141 @@
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ReverseResultTiltAngle">
+        <property name="geometry">
+         <rect>
+          <x>1140</x>
+          <y>420</y>
+          <width>471</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Угол наклона:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ReverseResultTiltAlpha">
+        <property name="geometry">
+         <rect>
+          <x>1110</x>
+          <y>550</y>
+          <width>51</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>α:</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_ReverseResultTiltDegrees">
+        <property name="geometry">
+         <rect>
+          <x>1160</x>
+          <y>550</y>
+          <width>151</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_ReverseResultTiltMinutes">
+        <property name="geometry">
+         <rect>
+          <x>1390</x>
+          <y>550</y>
+          <width>151</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_ReverseResultTiltSeconds">
+        <property name="geometry">
+         <rect>
+          <x>1620</x>
+          <y>550</y>
+          <width>151</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ReverseResultTiltDegrees">
+        <property name="geometry">
+         <rect>
+          <x>1320</x>
+          <y>540</y>
+          <width>31</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>°</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ReverseResultTiltMinute">
+        <property name="geometry">
+         <rect>
+          <x>1540</x>
+          <y>540</y>
+          <width>41</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> '</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_ReverseResultsTiltSeconds">
+        <property name="geometry">
+         <rect>
+          <x>1780</x>
+          <y>540</y>
+          <width>31</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>&quot;</string>
         </property>
        </widget>
       </widget>

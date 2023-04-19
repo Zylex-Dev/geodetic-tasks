@@ -63,6 +63,8 @@ void MainWindow::on_pushButton_ReverseTask_clicked() // кнопка выбор�
     ui->lineEdit_ReverseCoordinates_X_2->clear();
     ui->lineEdit_ReverseCoordinates_Y_1->clear();
     ui->lineEdit_ReverseCoordinates_Y_2->clear();
+    ui->lineEdit_ReverseHeightA->clear();
+    ui->lineEdit_ReverseHeightB->clear();
 
 }
 
@@ -194,6 +196,10 @@ void MainWindow::on_pushButton_ReverseCalculate_clicked() // кнопка РАС
     double intpart3;
     double fractpart3 = modf(seconds, &intpart3); //intpart3 - seconds
 
+    double heightA = ui->lineEdit_ReverseHeightA->text().toDouble();
+    double heightB = ui->lineEdit_ReverseHeightB->text().toDouble();
+
+
 
     if (deltaX > 0 and deltaY > 0)
     { // r = alpha
@@ -295,20 +301,28 @@ void MainWindow::on_pushButton_ReverseCalculate_clicked() // кнопка РАС
 
 
 
+    // TiltAngle
+
+    double TiltAngle = atan(abs(heightB - heightA) / abs(Xb - Xa)); // TiltAngle in radians
+
+    double TiltAngleDegree = TiltAngle * 180 / M_PI; // convert to degrees
+
+    double intpart1_Degree; // degree
+    double fractpart_1 = modf(TiltAngleDegree, &intpart1_Degree); // intpart1_Degree - degrees
+
+    double TiltAngleMinutes = fractpart_1 * 60;
+
+    double intpart2_Minutes;
+    double fractpart_2 = modf(TiltAngleMinutes, &intpart2_Minutes); // intpart2_Minutes - minutes
+
+    double TiltAngleSeconds = fractpart_2 * 60;
+    double intpart3_Seconds;
+    double fractpart_3 = modf(TiltAngleSeconds, &intpart3_Seconds); // intpart3_Seconds - seconds
+    ui->spinBox_ReverseResultTiltDegrees->setValue(intpart1_Degree);
+    ui->spinBox_ReverseResultTiltMinutes->setValue(intpart2_Minutes);
+    ui->spinBox_ReverseResultTiltSeconds->setValue(intpart3_Seconds);
 
 
-
-
-
-
-
-
-
-
-
-
-
-    //ui->lineEdit_ReverseResultValue_L->setText(QString::number(,'f',25)
 }
 
 void MainWindow::on_pushButton_ReverseResultBack_clicked() // кнопка НАЗАД в МЕНЮ РЕЗУЛЬТАТА в обратной геодезической задаче
@@ -325,6 +339,8 @@ void MainWindow::on_pushButton_ReverseResultOK_clicked() // кнпока ОК в
     ui->lineEdit_ReverseCoordinates_X_2->clear();
     ui->lineEdit_ReverseCoordinates_Y_1->clear();
     ui->lineEdit_ReverseCoordinates_Y_2->clear();
+    ui->lineEdit_ReverseHeightA->clear();
+    ui->lineEdit_ReverseHeightB->clear();
 }
 
 
@@ -345,6 +361,8 @@ void MainWindow::setValidator()
     ui->lineEdit_ReverseCoordinates_X_2->setValidator(validatorMinus);
     ui->lineEdit_ReverseCoordinates_Y_2->setValidator(validatorMinus);
     ui->lineEdit_DirectHeightA->setValidator(validatorMinus);
+    ui->lineEdit_ReverseHeightA->setValidator(validatorMinus);
+    ui->lineEdit_ReverseHeightB->setValidator(validatorMinus);
 
 
 

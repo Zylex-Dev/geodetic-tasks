@@ -303,9 +303,7 @@ void MainWindow::on_pushButton_ReverseCalculate_clicked() // кнопка РАС
 
     // TiltAngle
 
-   //double TiltAngle = atan(abs(heightB - heightA) / abs(Xb - Xa)); // TiltAngle in radians
-
-    double TiltAngle = acos(deltaX / L);
+    double TiltAngle = acos(deltaX / L); //TiltAngle in radians
 
     double TiltAngleDegree = TiltAngle * 180 / M_PI; // convert to degrees
 

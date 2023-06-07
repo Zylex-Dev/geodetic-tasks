@@ -10,6 +10,7 @@
 #include <QValidator>
 #include <QPalette>
 #include <QMessageBox>
+#include <qcustomplot.h>
 
 
 namespace Ui {
@@ -63,6 +64,18 @@ private slots:
     void on_spinBox_DirectSeconds_valueChanged(int arg1);
 
     void setValidator();
+
+    void on_pushButton_Graph_clicked();
+
+    void on_pushButton_Graph_Draw_clicked();
+
+    void on_pushButton_Graph_Back_clicked();
+
+    void on_pushButton_GraphResult_OK_clicked();
+
+    void on_pushButton_GraphResult_Back_clicked();
+
+    void on_spinBox_Graph_PointsValue_valueChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;

@@ -468,14 +468,14 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="MenuWidget">
        <widget class="QPushButton" name="pushButton_DirectTask">
         <property name="geometry">
          <rect>
           <x>530</x>
-          <y>290</y>
+          <y>200</y>
           <width>891</width>
           <height>151</height>
          </rect>
@@ -493,7 +493,7 @@
         <property name="geometry">
          <rect>
           <x>530</x>
-          <y>560</y>
+          <y>400</y>
           <width>891</width>
           <height>151</height>
          </rect>
@@ -523,6 +523,24 @@
         </property>
         <property name="text">
          <string>Выберите какую задачу вы хотите решить:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Graph">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>600</y>
+          <width>891</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Построить График</string>
         </property>
        </widget>
       </widget>
@@ -2037,6 +2055,223 @@
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="Graph">
+       <widget class="QTableWidget" name="tableWidget_Graph">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>60</y>
+          <width>591</width>
+          <height>641</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>23</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <row>
+         <property name="text">
+          <string>1</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>Высота (м)</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>23</pointsize>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Проложение (м)</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>23</pointsize>
+          </font>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>23</pointsize>
+          </font>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>23</pointsize>
+          </font>
+         </property>
+        </item>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_Graph_PointsValue">
+        <property name="geometry">
+         <rect>
+          <x>1150</x>
+          <y>60</y>
+          <width>151</width>
+          <height>61</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>10</y>
+          <width>421</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Введите параметры точек:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>1020</x>
+          <y>10</y>
+          <width>441</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Введите кол-во точек (1-12)</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Graph_Draw">
+        <property name="geometry">
+         <rect>
+          <x>1400</x>
+          <y>600</y>
+          <width>281</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Построить</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Graph_Back">
+        <property name="geometry">
+         <rect>
+          <x>1060</x>
+          <y>600</y>
+          <width>281</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Назад</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="GraphResult">
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>20</y>
+          <width>301</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>35</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Результат</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_13">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>100</y>
+          <width>281</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_14">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>-10</y>
+          <width>20</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QCustomPlot" name="widget_Graph" native="true">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>150</y>
+          <width>1291</width>
+          <height>721</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_GraphResult_OK">
+        <property name="geometry">
+         <rect>
+          <x>1430</x>
+          <y>220</y>
+          <width>361</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_GraphResult_Back">
+        <property name="geometry">
+         <rect>
+          <x>1430</x>
+          <y>500</y>
+          <width>361</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Назад</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -2062,6 +2297,14 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

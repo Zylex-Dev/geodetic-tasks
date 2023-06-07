@@ -24,6 +24,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->spinBox_ReverseResultDegrees->setRange(0,360);
     ui->spinBox_ReverseResultMinutes->setRange(0,60);
     ui->spinBox_ReverseResultSeconds->setRange(0,60);
+    //graph
+    ui->spinBox_Graph_PointsValue->setRange(1,12);
+
+
+
+    ui->tableWidget_Graph->setColumnWidth(0, 260);
+    ui->tableWidget_Graph->setColumnWidth(1, 260);
+
+
 
 
     setValidator();
@@ -416,3 +425,100 @@ void MainWindow::on_spinBox_DirectSeconds_valueChanged(int arg1)
     }
 }
 
+
+void MainWindow::on_pushButton_Graph_clicked() // Кнопка Графика
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_pushButton_Graph_Draw_clicked() // Нарисовать График
+{
+    ui->stackedWidget->setCurrentIndex(6);
+    ui->widget_Graph->clearPlottables();
+    ui->widget_Graph->replot();
+
+    const int pointCount = ui->tableWidget_Graph->rowCount();
+
+    QCPCurve *graph = new QCPCurve(ui->widget_Graph->xAxis, ui->widget_Graph->yAxis);
+    ui->widget_Graph->xAxis->setLabel("Проложение");
+    ui->widget_Graph->yAxis->setLabel("Высота");;
+
+
+    QVector <QCPCurveData> dataGraph(pointCount);
+    QVector <double> x(pointCount), y(pointCount);
+
+    int h, d = 0;
+
+    for (int i = 0; i < pointCount; i++)
+    {
+        QSpinBox* valHeight = qobject_cast <QSpinBox*> (ui->tableWidget_Graph->cellWidget(i, 0));
+        QSpinBox* valDistance = qobject_cast <QSpinBox*> (ui->tableWidget_Graph->cellWidget(i, 1));
+        if (i)
+        {
+            d += valDistance->value();
+        }
+        else
+            d = valDistance->value();
+
+        h = valHeight->value();
+
+        dataGraph[i] = QCPCurveData(i, d, h);
+
+
+        x[i] = d;
+        y[i] = h;
+    }
+
+    ui->widget_Graph->addGraph();
+    ui->widget_Graph->graph(0)->setData(x, y);
+    ui->widget_Graph->graph(0)->setPen(QColor(28, 28, 28, 255));//задаем цвет точки
+    ui->widget_Graph->graph(0)->setLineStyle(QCPGraph::lsNone);//убираем линии
+    //ui->widget_Graph->graph(0)->setChannelFillGraph()
+    //формируем вид точек
+    ui->widget_Graph->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 15));
+
+    graph->data()->set(dataGraph, true);
+
+//    ui->widget_Graph->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    ui->widget_Graph->axisRect()->setupFullAxesBox();
+    ui->widget_Graph->rescaleAxes();
+    ui->widget_Graph->replot();
+}
+
+void MainWindow::on_pushButton_Graph_Back_clicked() // Вернуться в меню
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_GraphResult_OK_clicked() // Вернуться в меню
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_GraphResult_Back_clicked() // в меню параметров точек
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_spinBox_Graph_PointsValue_valueChanged(int arg1) // Spinbox PointsValue
+{
+    ui->tableWidget_Graph->setRowCount(arg1);
+
+    for (int i = 0; i < ui->tableWidget_Graph->rowCount(); ++i)
+    {
+        for (int j = 0; j < ui->tableWidget_Graph->columnCount(); ++j)
+        {
+            QTableWidgetItem* item = ui->tableWidget_Graph->item(i, j);
+            if (!item)
+            {
+                item = new QTableWidgetItem;
+                ui->tableWidget_Graph->setItem(i, j, item);
+            }
+            QSpinBox *edit = new QSpinBox(ui->tableWidget_Graph);
+            edit->setRange(-100, 100);
+            //edit->setButtonSymbols(QAbstractSpinBox::NoButtons);
+
+            ui->tableWidget_Graph->setCellWidget(i, j, edit);
+        }
+    }
+}
